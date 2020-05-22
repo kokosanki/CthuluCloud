@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState}  from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Modal from "../Components/Modal";
 
 const Button = styled.button`
   background-color: ${({ theme: { colors } }) => colors.green};
@@ -25,15 +26,17 @@ const Container = styled.div`
   align-items: center;
   height: calc(100vh - 50px);
 `
-
 const HomePage = () => {
+
+  const [isModalVisible, setDisplayModal] = React.useState(false)  
+
   return (
     <div>
       <Container>
         <P>What would you like to do?</P>
-        <Button>
-          <NavLink to={"/charactercreator"}>Create a character</NavLink>
-        </Button>
+        <Button onClick={() => setDisplayModal(true)}>Create a character</Button>
+
+        {isModalVisible ? <Modal setDisplayModal={setDisplayModal} /> : null}
       </Container>
     </div>
   );
