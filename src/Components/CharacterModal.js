@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+
 const Container = styled.div`
   max-width: 70vw;
   padding: 20px;
@@ -32,17 +34,25 @@ const Button = styled.button`
   padding: 5px 10px;
   border-radius: 5px;
 `;
+const SubmitButton = styled.input`
+  color: ${({ theme: { colors } }) => colors.dark};
+  background-color: ${({ theme: { colors } }) => colors.green};
+  border: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+`;
 
-const Modal = ({setDisplayModal}) => {
+const CharacterModal = ({setDisplayModal, createNewCharacter}) => {
   return (
     <Container>
-      <Button  onClick={() => setDisplayModal(false)}>X</Button>
-      <Form>
+      <Button onClick={() => setDisplayModal(false)}>X</Button>
+      <Form onSubmit={createNewCharacter} >
         <Input name="name" type="text" placeholder="name" />
-        <Button>Sign up</Button>
+        <SubmitButton type="submit" value="submit" />
       </Form>
     </Container>
   );
 };
 
-export default Modal;
+export default CharacterModal;
