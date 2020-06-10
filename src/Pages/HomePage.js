@@ -25,21 +25,21 @@ const Container = styled.div`
   align-items: center;
   height: calc(100vh - 50px);
 `;
-const HomePage = () => {
-  const [isModalVisible, setDisplayModal] = React.useState(false);
+const HomePage = ({setDisplayModal, isModalVisible, addCharacter, characterList}) => {
+  // const [isModalVisible, setDisplayModal] = React.useState(false);
 
-  const [characterList, setNewCharacter] = React.useState([]);
+  // const [characterList, setNewCharacter] = React.useState([]);
 
-  const addCharacter = (e) => {
-    e.preventDefault();
-    if (e.target.name.value.length <= 0) {
-      alert("Please, type a name.");
-    } else {
-      const id = e.target.name.value;
-      setNewCharacter([...characterList, { id }]);
-      setDisplayModal(false);
-    }
-  };
+  // const addCharacter = (e) => {
+  //   e.preventDefault();
+  //   if (e.target.name.value.length <= 0) {
+  //     alert("Please, type a name.");
+  //   } else {
+  //     const id = e.target.name.value;
+  //     setNewCharacter([...characterList, { id }]);
+  //     setDisplayModal(false);
+  //   }
+  // };
 
   return (
     <div>
@@ -57,9 +57,9 @@ const HomePage = () => {
         ) : null}
 
         <ul>
-          {characterList.map(({ id }) => (
+          {characterList.map(({ name, id }) => (
             <li key={id}>
-              <Link to={`/characters/${id}`}>{id}</Link>
+              <Link to={`/characters/${id}`}>{name}</Link>
             </li>
           ))}
         </ul>
