@@ -4,7 +4,7 @@ import CharacterSkills from "./CharacterSkills";
 import CharacterEquipment from "./CharacterEquipment";
 import CharacterJournal from "./CharacterJournal";
 import CharacterNavigation from "../Components/CharacterNavigation";
-import CharacterStats from "./CharacterStats";
+import CharacterCharacteristics from "./CharacterCharacteristics";
 import CharacterPersonality from "./CharacterPersonality";
 
 const CharacterPage = ({ match, characterList }) => {
@@ -26,7 +26,7 @@ const CharacterPage = ({ match, characterList }) => {
             case "Personality":
               return <CharacterPersonality />;
             case "Stats":
-              return <CharacterStats />;
+              return <CharacterCharacteristics />;
             default:
               return null;
           }
