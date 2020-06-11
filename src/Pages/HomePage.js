@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CharacterModal from "../Components/CharacterModal";
@@ -26,20 +26,6 @@ const Container = styled.div`
   height: calc(100vh - 50px);
 `;
 const HomePage = ({setDisplayModal, isModalVisible, addCharacter, characterList}) => {
-  // const [isModalVisible, setDisplayModal] = React.useState(false);
-
-  // const [characterList, setNewCharacter] = React.useState([]);
-
-  // const addCharacter = (e) => {
-  //   e.preventDefault();
-  //   if (e.target.name.value.length <= 0) {
-  //     alert("Please, type a name.");
-  //   } else {
-  //     const id = e.target.name.value;
-  //     setNewCharacter([...characterList, { id }]);
-  //     setDisplayModal(false);
-  //   }
-  // };
 
   return (
     <div>
@@ -57,8 +43,8 @@ const HomePage = ({setDisplayModal, isModalVisible, addCharacter, characterList}
         ) : null}
 
         <ul>
-          {characterList.map(({ name, id }) => (
-            <li key={id}>
+          {characterList.map(({ name, id, key }) => (
+            <li key={key}>
               <Link to={`/characters/${id}`}>{name}</Link>
             </li>
           ))}

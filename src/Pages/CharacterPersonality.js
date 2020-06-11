@@ -14,13 +14,13 @@ const CharacterPersonality = () => {
     { name: "Encounters with Strange Entities", description: "" },
   ];
 
-  const party = [];
+  // const party = [];
   return (
     <>
       <h2>Personality</h2>
       <ul>
         {backstory.map((item) => (
-          <li>{item.name}</li>
+          <li key={item.name}>{item.name}</li>
         ))}
       </ul>
     </>

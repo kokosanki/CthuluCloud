@@ -58,8 +58,8 @@ const CharacterSkills = () => {
             {" "}
             <input type="checkbox" /> <label>{skill.skill}</label>{" "}
             <input type="number" placeholder={skill.value} />
-            <sup>{skill.value / 2}</sup>
-            <sub>{skill.value / 5}</sub>
+            <sup>{(skill.value / 2).toString()}</sup>
+            <sub>{(skill.value / 5).toString()}</sub>
           </li>
         ))}
       </ul>

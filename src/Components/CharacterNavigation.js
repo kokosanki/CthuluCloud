@@ -11,7 +11,7 @@ const CharacterNavigation = ({ setSite }) => {
     <div>
       <ul>
         {subPages.map((page) => (
-          <button onClick={() => chooseSite(page)}>{page}</button>
+          <button key={page} onClick={() => chooseSite(page)}>{page}</button>
         ))}
       </ul>
     </div>
