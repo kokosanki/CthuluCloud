@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import CharacterModal from "../Components/CharacterModal";
+import CharacterModal from "../Components/modals/CharacterModal";
 
 const Button = styled.button`
   background-color: ${({ theme: { colors } }) => colors.green};

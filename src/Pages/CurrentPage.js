@@ -13,6 +13,7 @@ import CharacterEquipment from "./CharacterEquipment";
 import CharacterJournal from "./CharacterJournal";
 import CharacterPersonality from "./CharacterPersonality";
 import { v4 as uuidv4 } from "uuid";
+import Wrapper from "../Components/containers/Wrapper";
 
 const CurrentPage = () => {
   const [isModalVisible, setDisplayModal] = React.useState(false);
@@ -35,7 +36,7 @@ const CurrentPage = () => {
   return (
     <>
       <Navigation />
-
+    <Wrapper>
       <Switch>
         <Route
           path="/"
@@ -86,6 +87,7 @@ const CurrentPage = () => {
           component={CharacterPersonality}
         />
       </Switch>
+      </Wrapper>
     </>
   );
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "./buttons/Button";
+import Ul from "./containers/Ul";
 
 const CharacterNavigation = ({ setSite }) => {
   const subPages = ["Stats", "Skills", "Equipment", "Personality", "Journal"];
@@ -9,11 +11,11 @@ const CharacterNavigation = ({ setSite }) => {
 
   return (
     <div>
-      <ul>
+      <Ul>
         {subPages.map((page) => (
-          <button key={page} onClick={() => chooseSite(page)}>{page}</button>
+          <Button key={page} onClick={() => chooseSite(page)}>{page}</Button>
         ))}
-      </ul>
+      </Ul>
     </div>
   );
 };
